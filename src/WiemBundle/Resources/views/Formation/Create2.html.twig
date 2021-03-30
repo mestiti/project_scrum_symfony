@@ -1,0 +1,167 @@
+{% extends 'back.html.twig'%}
+
+{% block content %}
+
+
+<div class="container mt-4" xmlns="http://www.w3.org/1999/html">
+
+</div>
+
+    <section id="basic-form-layouts">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+
+
+                        </div>
+                    </div>
+                    <div class="card-content collpase show">
+                        <div class="card-body">
+
+
+                            <div class="form-body">
+                                <h4 class="form-section"><i class="ft-clipboard"></i>Ajouter formation</h4>
+
+                                <form action="{{ path('ajout_formation') }}" method="get">
+
+
+                                <div class="form-group row">
+
+                                    <label class="col-md-3 label-control" for="projectinput1">Nom Formation
+                                    </label>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input name="nom" type="text"></input>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group row">
+
+                                    <label class="col-md-3 label-control" for="projectinput1">Sujet formation
+                                    </label>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input name="sujet" type="text"></input>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+
+                                    <label class="col-md-3 label-control" for="projectinput1">Formateur
+                                    </label>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <fieldset class="form-group">
+                                                <select class="form-control" id="basicSelect" name="idp">
+                                                    <option>Select project</option>
+                                                    {% for forums in a %}
+                                                        <option value= {{ forums.id }}> {{ forums.username }}</option>
+                                                    {%  endfor %}
+                                                </select>
+                                            </fieldset>
+                                    </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="projectinput1">Liste personne</label>
+
+                                    <div class="col-md-6">
+
+                                        <fieldset class="form-group">
+
+                                            <select class="form-control" id="countrySelect" multiple="multiple" name="liste1">
+
+                                                {% for forums in b %}
+                                                <option value="{{ forums.username}}">{{ forums.username}}</option>
+                                                {%  endfor %}
+
+                                            </select>
+
+
+                                            <input name="liste">
+
+
+                                        </fieldset>
+                                    </div>
+
+
+
+                                    </div>
+
+
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control"  for="projectinput1">Date</label>
+
+                                    <div class="col-md-6">
+
+
+                                                <input name="date" type="date"></input>
+
+
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control">Time debut</label>
+
+                                    <div class="col-md-6">
+                                        <div class="position-relative has-icon-left">
+
+
+                                                        <i class="ft-clock">
+                                                        </i>
+
+                                                <input name="t1" type="time"></input>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control">Time fin</label>
+
+                                    <div class="col-md-6">
+                                        <div class="position-relative has-icon-left">
+                                                <i class="ft-clock">
+                                                    <input name="t2" type="time"></input>
+                                                </i>
+                                        </div>
+                                    </div>
+                                </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-check-square-o"></i> Save
+                        </button>
+
+
+                            </div>
+            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+        </div>
+
+
+        </div>
+
+
+    </section>
+
+
+{% endblock %}

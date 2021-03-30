@@ -1,0 +1,94 @@
+{% extends 'back.html.twig' %}
+{% block content %}
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <meta property="og:url"           content="https://www.your-domain.com/your-page.html" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Your Website Title" />
+    <meta property="og:description"   content="Your description" />
+    <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div class="blog">
+        <div class="container">
+            <div class="blog-top">
+
+    <div class="divTable" style="width:90%;border-radius: 1px;
+                    background-color: #e6e6e6;
+                    padding: 10px;
+                    margin-top: 80px;            ">
+        <h4 style="border-radius: 1px;
+                    background-color: #f2f2f2;
+                    padding: 10px;"><b>{{ post.title }}</b></h4>
+        <div class="divTableBody">
+            <div class="divTableRow" style="height: 50%">
+                <div class="divTableCell" style=" float:left;margin-left:2%;width: 85%;height: 100% ;border-radius: 1px;
+        background-color: white;padding: 20px;">{{ post.text | raw }}</div>
+                <div class="divTableCell" style="float:right;margin-top:1%;margin-right:2%;width: 10%;height: 100%; border-radius: 1px;
+                    background-color:white ;text-align: center"><h2>{{ post.votecount }}</h2></div>
+
+            </div>
+        </div>
+
+                <div>
+                    <div style="text-align: right;margin-top:1%;padding-top: 60px">Posted:{{ post.dateadded|date('d-m-Y H:i') }} By {{post.user.username}}</div>
+                    <div style="border-radius: 1px;margin-top:1%;margin-left: 88%;width: 10%;text-align: center;background-color: white">{% if post.solved %}Solved{% else %} {% endif %}</div>
+                </div>
+
+        <table>
+            <tr>
+                <td style="margin: 10%">{{ form_start(delete_form) }}
+                    {% if post.user.id == user.id %}<input type="submit" value="Delete" class="btn btn-danger">{% endif %}
+                    {{ form_end(delete_form) }}</td>
+                <td style="margin: 10%">
+                    {% if post.user.id == user.id %}<a href="{{ path('post_edit', { 'id': post.id }) }}" class="btn btn-warning">Edit</a> {% endif %}
+                </td>
+                <td style="margin: 10%">
+                </td><td style="margin: 10%">
+                    {% if (post.user.id == user.id) and (post.category == "question") %}<a href="{{ path('solved', { 'id': post.id }) }}" class="btn btn-success"><i class="fas fa-check-square"></i></a>{% endif %}
+                </td>
+            </tr>
+        </table>
+        <form method="POST" action="{{ path("comment",{"id":post.id }) }}">
+            <input type="submit" class="btn btn-primary square btn-min-width mr-1 mb-1" value="Comment" style="margin: 1%">
+            <iframe src="https://www.facebook.com/plugins/share_button.php?href=http://esprit.tn/" margin-top="10px" ;width="300" height="20" style="border:20px;overflow:hidden" scrolling="no" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>
+
+            {% if ( b == false ) %}<a href="{{ path("upvote",{"id":post.id }) }}" class="btn btn-default"> <i class="fas fa-arrow-up"></i></a>
+                {% else %}<a class="btn btn-default"> <i class="far fa-minus-square"></i></a> {% endif %}
+
+        </form>
+
+
+    </div>
+                    <a href="{{ path('post_index') }}" class="btn btn-dark square btn-min-width mr-1 mb-1" style="margin-top: 10px">Back</a>
+    </div>
+            {% for comment in comments %}
+                <div class="container" style="width:80%;float: left;background-color: grey;padding: 1%;border-radius: 1px">
+                    <div style="float:left;width:60%;background-color: #e6e6e6;padding:10px;border-radius: inherit">{{ comment.content }} </div>
+                    <div><a href="{{ path('comment_show',{"id":comment.id}) }}" class="btn btn-light square btn-min-width mr-1 mb-1" style="margin-left: 5%;  height: 40px"><h6>Info</h6></a></div>
+
+                </div>
+
+            {% endfor %}
+
+
+        </div>
+
+
+    </div>
+{% endblock %}
+
+
+
+
+
+

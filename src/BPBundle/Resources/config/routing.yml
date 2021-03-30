@@ -1,0 +1,47 @@
+bp_homepage:
+    path:     /
+    defaults: { _controller: BPBundle:Default:index }
+
+bp_affichage:
+    path:     /feat
+    defaults: { _controller: BPBundle:Backlogproduit:feat }
+
+bp_supp:
+    path:     /suppbp/{id}
+    defaults: { _controller: BPBundle:Backlogproduit:suppbp }
+
+bp_ajout:
+    path:     /ajoutbp
+    defaults: { _controller: BPBundle:Backlogproduit:ajouterbp }
+
+bp_modif:
+    path:     /modifybp/{id}
+    defaults: { _controller: BPBundle:Backlogproduit:modifybp }
+
+
+bp_usermodif:
+    path:     /modifyuserbp/{id}
+    defaults: { _controller: BPBundle:Userstorybp:modifyuserbp }
+
+
+bp_userajout:
+    path:     /ajoutuserbp
+    defaults: { _controller: BPBundle:Userstorybp:ajouteruserbp }
+
+
+bp_usersupp:
+    path:     /suppuserbp/{id}
+    defaults: { _controller: BPBundle:Userstorybp:suppuserbp }
+
+
+bp_useraff:
+    path:     /userbpaffich
+    defaults: { _controller: BPBundle:Userstorybp:featuser }
+
+bp_Progress:
+    path:     /prog
+    defaults: { _controller: BPBundle:Progress:progressbp }
+
+Statistics:
+    path:     /Statbp
+    defaults: { _controller: BPBundle:Statistics:calculerbp }

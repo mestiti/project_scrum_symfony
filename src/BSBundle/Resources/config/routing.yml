@@ -1,0 +1,144 @@
+bs_homepage:
+    path:     /index
+    defaults: { _controller: BSBundle:Default:index }
+test-bs:
+    path:     /test
+    defaults: { _controller: BSBundle:BacklogS:afficherp }
+
+test_delete:
+    path:     /deletebs/{id}
+    defaults: { _controller: BSBundle:BacklogS:deletebs }
+
+test_update:
+    path:     /test1/{id}/{nbr}
+    defaults: { _controller: BSBundle:BacklogS:updatebs }
+
+Sprintv:
+    path:     /sprintv
+    defaults: { _controller: BSBundle:Sprint:create }
+
+sprint_update:
+    path:     /Sprintv1/{id}
+    defaults: { _controller: BSBundle:Sprint:update }
+
+sprint_delete:
+    path:     /Sprintv/{id}
+    defaults: { _controller: BSBundle:Sprint:delete }
+
+Sprint_add:
+    path:     /create
+    defaults: { _controller: BSBundle:Sprint:create }
+test1:
+    path:     /add2
+    defaults: { _controller: BSBundle:BacklogS:create }
+
+test2:
+    path:     /add3
+    defaults: { _controller: BSBundle:BacklogS:add4 }
+
+ajout-bs:
+    path:     /ajouter
+    defaults: { _controller: BSBundle:BacklogS:add4 }
+
+modifier:
+    path:     /modifier
+    defaults: { _controller: BSBundle:BacklogS:modif }
+
+test4:
+    path:     /ajouter
+    defaults: { _controller: BSBundle:BacklogS:ajouter }
+
+user_story:
+    path:     /Userstory
+    defaults: { _controller: BSBundle:Userst:affi }
+
+user_story_add:
+    path:     /aaa
+    defaults: { _controller: BSBundle:Userst:add5 }
+
+user_story_update:
+    path:     /Userstory1/{id}/{desc1}/{desc2}
+    defaults: { _controller: BSBundle:Userst:updateus }
+
+modifier_us:
+    path:     /modifier_us
+    defaults: { _controller: BSBundle:Userst:update }
+
+delete_us:
+    path:     /delete_us/{id}
+    defaults: { _controller: BSBundle:Userst:delete }
+
+go_tache:
+    path:     /tache/{id}
+    defaults: { _controller: BSBundle:Tache:home }
+
+ajout_tache:
+    path:     /ajoutertache
+    defaults: { _controller: BSBundle:Tache:add }
+
+opa:
+    path:     /opa
+    defaults: { _controller: BSBundle:Tache:opa }
+
+aff_tache:
+    path:     /aff_tache
+    defaults: { _controller: BSBundle:Tache:aff }
+
+aff_tache2:
+    path:     /aff_tache2/{id}
+    defaults: { _controller: BSBundle:Tache:aff2 }
+
+modif_tache:
+    path:     /modif_tache/{id}/{nom}/{desc}/{prio}/{diff}
+    defaults: { _controller: BSBundle:Tache:modif }
+
+modifier_tache:
+    path:     /modifier_tache
+    defaults: { _controller: BSBundle:Tache:up }
+
+aff_tache3:
+    path:     /aff_tache3/{id}
+    defaults: { _controller: BSBundle:Tache:aff3 }
+
+modifier_tache2:
+    path:     /modifier_tache2
+    defaults: { _controller: BSBundle:Tache:assign }
+
+delete_tache:
+    path:     /tache_delete/{id}
+    defaults: { _controller: BSBundle:Tache:delete }
+
+tache_team:
+    path:     /tache_team
+    defaults: { _controller: BSBundle:Tache:tache_team }
+
+make_prog:
+    path:     /make_prog/{id}/{prog}
+    defaults: { _controller: BSBundle:Tache:make_prog }
+
+modifier_tache3:
+    path:     /modifier_prog
+    defaults: { _controller: BSBundle:Tache:modifier_prog }
+
+go_notif:
+    path:     /notif
+    defaults: { _controller: BSBundle:Tache:go_notif }
+
+go_notif2:
+    path:     /notif2
+    defaults: { _controller: BSBundle:Tache:go_notif2 }
+clean:
+    path:     /clean
+    defaults: { _controller: BSBundle:Tache:clean }
+
+aff_tache4:
+    path:     /aff_tache4/{id}
+    defaults: { _controller: BSBundle:Tache:aff4 }
+
+smart_prog:
+    path:     /smart_prog
+    defaults: { _controller: BSBundle:Tache:smart_prog }
+
+
+
+

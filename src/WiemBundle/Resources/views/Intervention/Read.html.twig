@@ -1,0 +1,57 @@
+{% extends 'back.html.twig'%}
+{% block content %}
+
+<table border="1">
+    <tr>
+        <a href="{{ path('createI') }}">
+
+            <button>Create</button>
+
+        </a>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Adress</th>
+        <th>Domain</th>
+        <th>Description</th>
+        <th>Adress</th>
+        <th>Domain</th>
+
+
+
+
+    </tr>
+
+
+    <tr>
+        {% for i in f %}
+        <td>{{ i.getIdIntervention()}}</td>
+        <td>{{ i.getDescriptionIntervention()}}</td>
+        <td>{{ i.dateIntervention}}</td>
+        <td>{{ i.getIdeSm()}}</td>
+
+
+        <td>
+            <a href="{{ path('deleteI',{'id':i.getIdIntervention()}) }}">
+
+                <button>Suppression</button>
+
+            </a>
+        </td>
+
+        <td>
+            <a href="{{ path('updateI',{'id':i.getIdIntervention()}) }}">
+
+                <button>Modifier</button>
+
+            </a>
+        </td>
+
+    </tr>
+
+
+
+    {% endfor %}
+</table>
+
+{% endblock %}

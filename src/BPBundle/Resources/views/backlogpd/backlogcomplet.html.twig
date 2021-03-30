@@ -1,0 +1,317 @@
+
+<link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/vendors.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/tables/datatable/datatables.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/charts/jquery-jvectormap-2.0.3.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/charts/morris.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/extensions/unslider.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/weather-icons/climacons.min.css') }}">
+<!-- END VENDOR CSS-->
+
+<!-- END ROBUST CSS-->
+<!-- BEGIN Page Level CSS-->
+<link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/core/menu/menu-types/vertical-menu.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/core/colors/palette-gradient.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/core/colors/palette-gradient.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/plugins/calendars/clndr.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/fonts/meteocons/style.min.css') }}">
+<!-- END Page Level CSS-->
+<link rel="stylesheet" type="text/css" href="{{ asset('back/assets/css/style.css') }}">
+
+<link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/app.css') }}">
+<link rel="stylesheet" href="{{ asset('front//css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/line-icons.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/owl.carousel.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/owl.theme.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/nivo-lightbox.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/magnific-popup.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/animate.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/color-switcher.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/menu_sideslide.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/main.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/responsive.css') }}">
+
+<header id="slider-area">
+    <style>
+        .d{position:center;background-color: whitesmoke}
+        .d1{margin-right: -2700px;}
+
+    </style>
+    {% block navbar %}
+        <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+            <div class="container">
+
+                <a class="navbar-brand" href="{{ path('homepage') }}"><img src="{{ asset('front/img/logo.png') }}"></a>
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+
+                    <ul class="nav navbar-nav mr-auto float-left">
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="#slider-area">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="#features">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="#portfolios">Works</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="#team">Team</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="#contact">Contact</a>
+                        </li>
+
+
+                    </ul>
+
+                    {% if is_granted('ROLE_USER') %}
+                        <ul class="nav navbar-nav float-right">
+                            <li class="dropdown dropdown-user nav-item">
+                                <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                                    <span class="avatar avatar-online"><img src="{{ asset('back/app-assets/images/portrait/small/av.png') }}" alt="avatar"><i></i></span>
+
+                                    <span class="user-name">{{ app.user.username }} </span></a>
+
+
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="{{ path('fos_user_profile_show') }}"><i class="ft-user"></i> Profile</a>
+                                    <a class="dropdown-item" href="{{ path('fos_user_profile_edit') }}"><i class="ft-user"></i> Edit Profile</a>
+                                    <a class="dropdown-item" href="#"><i class="fa fa-briefcase"></i> Projects</a>
+                                    <a class="dropdown-item" href="Backlogpd"> <i class="fa fa-file"></i>features</a>
+                                    <a class="dropdown-item" href="Backlogus"><i class="ft-clipboard"></i> user stories</a>
+                                    <a class="dropdown-item" href="Stat"><i class="	fa fa-bar-chart"></i> statistics</a>
+                                    <a class="dropdown-item" href="pr"> <i class="fa fa-line-chart"></i> progress</a>
+
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ path('fos_user_security_logout') }}"><i class="ft-power"></i> Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    {% else %}
+                        <ul class="nav navbar-nav mr-auto float-left">
+                            <a class="nav-link page-scroll" href="{{ path('fos_user_security_login') }}">login</a>
+                            <a class="nav-link page-scroll" href="{{ path('fos_user_registration_register') }}">Register</a>
+                        </ul>
+                    {% endif %}
+
+
+
+                </div>
+            </div>
+        </nav>
+    {% endblock %}
+
+    <div id="carousel-area">
+        <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-slider" data-slide-to="1"></li>
+                <li data-target="#carousel-slider" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <img src="{{ asset('front/img/slider/1.png') }}" alt="">
+                    <div class="carousel-caption text-left">
+
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('front/img/slider/2.png') }}" alt="">
+                    <div class="carousel-caption text-center">
+
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('front/img/slider/3.png') }}" alt="">
+                    <div class="carousel-caption text-center">
+
+
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carousel-slider" role="button" data-slide="prev">
+                <span class="carousel-control" aria-hidden="true"><i class="lni-chevron-left"></i></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-slider" role="button" data-slide="next">
+                <span class="carousel-control" aria-hidden="true"><i class="lni-chevron-right"></i></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</header>
+<div class="d">
+    <div class="cent">
+        <section id="row-selection">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="col-md-4 text-center mb-2">
+
+
+                        </div>
+
+
+
+
+
+
+                        <br/>
+                        <br/>
+            <style>
+                .bb{margin-left: 400px;margin-top: -90px;background-color: green;width: 100px}
+                .b1{margin-left: 1100px;margin-top: 50px; }
+                .b2{margin-left: 110px;margin-top: -50px;width: 200px}
+
+            </style>
+
+
+            <div class="content-body"><!-- Basic initialization -->
+
+            <section id="initialization">
+
+                <div class="row">
+
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+
+
+                            </div>
+
+
+                                <div class="card-body card-dashboard">
+
+                                    </p>
+                                    <table class="table table-striped table-bordered responsive dataex-rowre-basic">
+                                        <thead>
+                                        <tr>
+                                            <th>num feature</th>
+                                            <th>feature</th>
+                                            <th>num user story</th>
+                                            <th>user story</th>
+                                            <th>prio</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+
+                                            {% for UserStoryBacklogProduit in a %}
+
+
+                                            <td> {{ UserStoryBacklogProduit.id_backlog_feature }}</td>
+                                            <td> {{ UserStoryBacklogProduit.feature }}</td>
+                                            <td> {{ UserStoryBacklogProduit.id_user_story_backlog_produit }}</td>
+                                            <td> {{ UserStoryBacklogProduit.user_story_bp }}</td>
+                                            <td> {{ UserStoryBacklogProduit.priority_bp }}</td>
+
+
+
+                                        </tr>
+                                        {%  endfor %}
+
+                                        </tbody>
+
+
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            </section>
+<form method="post">
+            <div class="b1">
+                <div class="col-md-4 text-center mb-2">
+                <button type="submit" class="btn bg-blue width-200 white buttonAnimation" name="impression" value="imprimer" data-animation="rubberBand">
+                    imprimer
+                </button>
+            </div>
+            </div>
+            <div class="b2">
+                <div class="col-md-4 text-center mb-2">
+                <button type="submit" class="btn bg-blue width-200 white buttonAnimation" name="csv" value="csv" data-animation="rubberBand">
+                    csv
+                </button>
+            </div>
+            </div>
+</form>
+            <div class="bb">
+
+                                    <div id="oldColumnChart"></div>
+                                </div>
+
+
+                <footer>
+                    <div id="copyright">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="site-info float-left">
+                                        <p>Created by <a href="http://uideck.com" rel="nofollow">WEMANAGE</a></p>
+                                    </div>
+                                    <div class="float-right">
+                                        <ul class="nav nav-inline">
+                                            <li class="nav-item">
+
+                                            </li>
+                                            <li class="nav-item">
+
+                                            </li>
+                                            <li class="nav-item">
+                                            </li>
+                                            <li class="nav-item">
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Contact</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </footer>
+                <script src="{{ asset('back/app-assets/vendors/js/vendors.min.js') }}"></script>
+                <!-- BEGIN VENDOR JS-->
+                <!-- BEGIN PAGE VENDOR JS-->
+
+                <script src="{{ asset('back/app-assets/vendors/js/ui/jquery.sticky.js') }}"></script>
+                <script src="{{ asset('back/app-assets/vendors/js/tables/datatable/datatables.min.js') }}"></script>
+                <script src="{{ asset('back/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js') }}"></script>
+
+
+                <!-- END PAGE VENDOR JS-->
+                <!-- BEGIN ROBUST JS-->
+                <script src="{{ asset('back/app-assets/js/core/app-menu.js') }}"></script>
+                <script src="{{ asset('back/app-assets/js/core/app.js') }}"></script>
+                <!-- END ROBUST JS-->
+                <!-- BEGIN PAGE LEVEL JS-->
+                <script src="{{ asset('back/app-assets/js/scripts/pages/dashboard-ecommerce.js') }}"></script>
+                <script src="{{ asset('back/app-assets/js/scripts/tables/datatables/datatable-basic.js') }}"></script>
+                <script src="{{ asset('back/app-assets/js/scripts/animation/animation.js')}}"></script>
+
+
+
+
+
+
+
+
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                    {{ gc_draw([oldColumnChart], ['oldColumnChart']) }}
+
+                </script>
+

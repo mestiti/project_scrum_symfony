@@ -1,0 +1,39 @@
+{% extends 'back.html.twig' %}
+
+{% block content %}
+    <h1>Metacomments list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Metacomment</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for metacomment in metacomments %}
+            <tr>
+                <td><a href="{{ path('metacomment_show', { 'id': metacomment.id }) }}">{{ metacomment.id }}</a></td>
+                <td>{% if metacomment.metacomment %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('metacomment_show', { 'id': metacomment.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('metacomment_edit', { 'id': metacomment.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('metacomment_new') }}">Create a new metacomment</a>
+        </li>
+    </ul>
+{% endblock %}

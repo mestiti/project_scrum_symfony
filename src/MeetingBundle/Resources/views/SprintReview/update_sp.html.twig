@@ -1,0 +1,58 @@
+{% extends 'back.html.twig' %}
+
+    {% block content %}
+
+
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="hidden-label-form-center">Modifier Sprint Review </h4>
+
+                </div>
+                <div class="card-content collpase show">
+                    <div class="card-body">
+
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-6">
+                                <div class="form-body">
+                                    {{ form_start(f) }}
+                                    {{ form_label(f.remarqueReviewEquipe, 'Remarque Review Equipe' ) }}
+                                    <textarea id="donationinput7" rows="5" class="form-control square"{{ form_widget(f.remarqueReviewEquipe, { 'attr': {'class': 'form-control'} }) }}</textarea>
+
+                                    {{ form_label(f.remarqueReviewProductOwner, 'Remarque Review PO' ) }}
+                                    <textarea id="donationinput7" rows="5" class="form-control square"{{ form_widget(f.remarqueReviewProductOwner, { 'attr': {'class': 'form-control'} }) }}</textarea>
+
+                                    {{ form_label(f.dateSprintReview, 'Date' | trans, { 'attr': {'class': 'form-control'} }) }}
+                                    {{ form_widget(f.dateSprintReview, { 'attr': {'class': 'form-control'} }) }}
+
+                                    {{ form_label(f.ideProjet, 'Nom Projet' )}}
+                                    {{ form_widget(f.ideProjet, { 'attr': {'class': 'form-control'} }) }}
+
+                                    {{ form_label(f.ideProductOwner, 'Nom PO' )}}
+                                    {{ form_widget(f.ideProductOwner, { 'attr': {'class': 'form-control'} }) }}
+
+                                    {{ form_label(f.ideEquipe, 'Nom Equipe' )}}
+                                    {{ form_widget(f.ideEquipe, { 'attr': {'class': 'form-control'} }) }}
+
+                                    {{ form_label(f.ideSprint, 'Nom Sprint' )}}
+                                    {{ form_widget(f.ideSprint, { 'attr': {'class': 'form-control'} }) }}
+
+
+                                    <div class="form-actions center">
+
+                                        {{ form_row(f.save, { 'attr': {'class': 'btn btn-primary' } } ) }}
+
+                                        {{ form_end(f) }}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    {% endblock %}

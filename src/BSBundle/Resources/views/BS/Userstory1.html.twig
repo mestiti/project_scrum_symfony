@@ -1,0 +1,74 @@
+{% extends 'back.html.twig'%}
+{% block content %}
+<section id="basic-form-layouts">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{{ path('modifier_us') }}" method="get">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title" id="bordered-layout-basic-form">Creation du sprint</h4>
+                        <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                        <div class="heading-elements">
+                            <ul class="list-inline mb-0">
+                                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                <li><a data-action="close"><i class="ft-x"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-content collpase show">
+                        <div class="card-body">
+                            <div class="card-text">
+                                <p>Creation de l'environnement de travail</p>
+                            </div>
+
+                            <div class="form-body">
+                                <h4 class="form-section"><i class="ft-clipboard"></i> modifier UserStory</h4>
+                                <div class="form-group row">
+
+
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="projectinput1">Sprint associé</label>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <select class="form-control" id="basicSelect" name="ids">
+                                                <option>Select sprint</option>
+                                                {% for forums in b %}
+                                                    <option value= {{ forums.id_sprint }}> {{ forums.description }}</option>
+                                                {%  endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" value={{id}} data-bts-min="2" name="id"/>
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="projectinput1">UserStory associé</label>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <fieldset class="form-group">
+                                                <textarea class="form-control bg-warning" id="tareaColor3" rows="3" name="desc">{{desc2}} </textarea>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-check-square-o"></i> Save
+                                </button>
+
+                            </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    </div>
+
+
+    </div>
+</section>
+
+    {% endblock %}

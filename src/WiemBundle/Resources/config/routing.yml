@@ -1,0 +1,98 @@
+wiem_homepage:
+    path:     /
+    defaults: { _controller: WiemBundle:Default:index }
+
+
+
+create:
+    path:     /create1
+    defaults: { _controller: WiemBundle:formation:create }
+
+read:
+    path:     /read1
+    defaults: { _controller: WiemBundle:formation:read }
+
+
+readfAdmin:
+    path:     /readfAdmin
+    defaults: { _controller: WiemBundle:formation:readfAdmin }
+
+delete1:
+    path:     /delete/{id}
+    defaults: { _controller: WiemBundle:formation:delete }
+
+
+update1:
+    path:     /update/{id}
+    defaults: { _controller: WiemBundle:formation:update }
+
+
+createR:
+    path:     /createR
+    defaults: { _controller: WiemBundle:Reclamation:create }
+
+readR:
+    path:     /readR
+    defaults: { _controller: WiemBundle:Reclamation:read }
+
+
+
+deleteR:
+    path:     /deleteR/{id}
+    defaults: { _controller: WiemBundle:Reclamation:delete }
+
+
+updateR:
+    path:     /updateR/{id}
+    defaults: { _controller: WiemBundle:Reclamation:update }
+
+
+
+createI:
+    path:     /createI
+    defaults: { _controller: WiemBundle:Intervention:create }
+
+
+
+readI:
+    path:     /readI
+    defaults: { _controller: WiemBundle:Intervention:read }
+
+add_in:
+    path:     /add_in/{id}
+    defaults: { _controller: WiemBundle:Intervention:ajout }
+
+add4:
+    path:     /addI
+    defaults: { _controller: WiemBundle:Intervention:add4 }
+
+deleteI:
+    path:     /deleteI/{id}
+    defaults: { _controller: WiemBundle:Intervention:delete }
+
+
+updateI:
+    path:     /updateI/{id}
+    defaults: { _controller: WiemBundle:Intervention:update }
+
+
+upload:
+    path:     /upload
+    defaults: { _controller: WiemBundle:Document:upload }
+
+readD:
+    path:     /readD
+    defaults: { _controller: WiemBundle:Document:read }
+
+updateD:
+    path:     /updateD/{id}
+    defaults: { _controller: WiemBundle:Document:update }
+
+deleteD:
+    path:     /deleteD/{id}
+    defaults: { _controller: WiemBundle:Document:delete}
+
+
+ajout_formation:
+    path:     /ajout_formation
+    defaults: { _controller: WiemBundle:formation:ajout_formation}

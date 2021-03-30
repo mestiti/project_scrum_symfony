@@ -1,0 +1,22 @@
+{% extends 'back.html.twig' %}
+
+{% block content %}
+<div class="blog">
+    <div class="container">
+        <div class="blog-top">
+    <div style="    border-radius: 20px;
+                    background-color: #e6e6e6;
+                    padding: 30px;">
+        {% form_theme edit_form 'bootstrap_4_layout.html.twig' %}
+        {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edit" class="btn btn-warning square btn-min-width mr-1 mb-1" style="margin-top: 8px" />
+        {{ form_end(edit_form) }}
+        {{ form_start(delete_form) }}
+        <input type="submit" value="Delete" class="btn btn-danger square btn-min-width mr-1 mb-1" style="margin-top: 8px">
+        {{ form_end(delete_form) }}
+
+
+    </div>
+        </div></div></div>
+{% endblock %}

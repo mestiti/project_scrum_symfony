@@ -1,0 +1,72 @@
+
+{% extends 'back.html.twig' %}
+{% block content %}
+    <div class="content-wrapper">
+
+        <section id="backColor">
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-1">
+                        <div class="card-content">
+
+                            <div class="bg-success bg-accent-3 height-50">
+                                <p class="white mb-0"style="margin-left: 230px"><strong><br>TODO</strong></p>
+                            </div>
+                            {% for todo in todo %}
+
+                                <div class="p-1">
+                                    <p class="mb-0"><strong>Nom Tache : {{todo.nomTache}}</strong><small class="text-muted float-right">{{todo.user}}</small></p>
+                                    <p class="mb-0">Description : {{todo.descriptionTache}}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-1">
+                        <div class="card-content">
+                            <div class="bg-orange bg-lighten-2 height-50">
+                                <p class="white mb-0"style="margin-left: 230px"><strong><br>DOING</strong></p>
+
+                            </div>
+                            {% for doing in doing %}
+
+                                <div class="p-1">
+                                    <p class="mb-0"><strong>Nom Tache : {{doing.nomTache}}</strong><small class="text-muted float-right">{{doing.user}}</small></p>
+                                    <p class="mb-0">Description : {{doing.descriptionTache}}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-1">
+                        <div class="card-content">
+                            <div class="bg-red bg-darken-2 height-50">
+                                <p class="white mb-0"style="margin-left: 230px"><strong><br>DONE</strong></p>
+
+                            </div>
+                            {% for done in done %}
+
+                                <div class="p-1">
+                                    <p class="mb-0"><strong>Nom Tache : {{done.nomTache}}</strong><small class="text-muted float-right">{{done.user}}</small></p>
+                                    <p class="mb-0">Description : {{done.descriptionTache}}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+{% endblock %}

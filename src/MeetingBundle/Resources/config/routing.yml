@@ -1,0 +1,51 @@
+meeting_homepage:
+    path:     /
+    defaults: { _controller: MeetingBundle:Default:index }
+ajoutersp:
+    path:     /ajoutsp
+    defaults: { _controller: MeetingBundle:SprintReview:ajout_sp }
+delete:
+    path:     /delete/{id}
+    defaults: { _controller: MeetingBundle:SprintReview:delete }
+update:
+    path:     /update/{id}
+    defaults: { _controller: MeetingBundle:SprintReview:update }
+ajoutsr:
+    path:     /ajoutsr
+    defaults: { _controller: MeetingBundle:SprintRetrospective:ajout_sr }
+deletesr:
+    path:     /deletesr/{id}
+    defaults: { _controller: MeetingBundle:SprintRetrospective:deletesr }
+updatesr:
+    path:     /updatesr/{id}
+    defaults: { _controller: MeetingBundle:SprintRetrospective:updatesr }
+scrumb:
+    path:     /scrumb
+    defaults: { _controller: MeetingBundle:ScrumBoard:index }
+
+
+ajouter_tache:
+    path:     /ajouter_tache
+    defaults: { _controller: MeetingBundle:tache:ajouter_tache }
+
+
+afficher_tache_sm:
+    path:     /affichertachesm
+    defaults: { _controller: MeetingBundle:tache:afficher_tache_sm }
+afficher_tache_team:
+    path:     /affichertacheteam
+    defaults: { _controller: MeetingBundle:tache:afficher_tache_team }
+
+
+todo:
+    path:     /todo/{id}
+    defaults: { _controller: MeetingBundle:tache:todo }
+doing:
+    path:     /doing/{id}
+    defaults: { _controller: MeetingBundle:tache:doing }
+done:
+    path:     /done/{id}
+    defaults: { _controller: MeetingBundle:tache:done }
+sc:
+    path:     /i
+    defaults: { _controller: MeetingBundle:ScrumBoard:index }

@@ -1,0 +1,75 @@
+{% extends 'back.html.twig' %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-12">
+            <!-- /.card -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title"></h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th style="text-align: center">ID</th>
+                            <th>By</th>
+                            <th>Title</th>
+                            <th>Text</th>
+                            <th>Votes</th>
+                            <th>Date</th>
+                            <th>Solved</th>
+                            <th>Category</th>
+                            <th style="background-color: darkcyan; color: whitesmoke; text-align: center">Options</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for post in posts %}
+                            <tr style="text-align: center">
+                                <td>{{ post.id }}</td>
+                                <td>{{ post.user.username }}</td>
+                                <td>{{ post.title }}</td>
+                                <td>{{ post.text | raw }}</td>
+                                <td>{{ post.votecount }}</td>
+                                <td>{{ post.dateadded|date('d-m-Y H:i') }}</td>
+                                <td>{% if post.solved == true %} SOLVED {% else %} NO {% endif %}</td>
+                                <td>{{ post.category }}</td>
+                               <td style="background-color:#D2DEDD"><a class="btn btn-danger btn-sm" href="{{ path('admin_delete',{'id':post.id}) }}">Delete</a>
+                                   <a class="btn btn-default btn-sm" href="{{ path('post_show',{'id':post.id}) }}">View</a>
+                               </td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    </section>
+{% endblock %}
+
+
+{% block javascripts %}
+    <!-- DataTables -->
+    <script src="{{ asset("back/plugins/datatables/jquery.dataTables.js") }}"></script>
+    <script src="{{ asset("back/plugins/datatables-bs4/js/dataTables.bootstrap4.js") }}"></script>
+    <script>
+        $(function () {
+            $("#example1").DataTable();
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+            });
+        });
+    </script>
+{% endblock %}

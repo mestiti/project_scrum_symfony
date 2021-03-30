@@ -1,0 +1,73 @@
+{% extends 'front.html.twig'%}
+{% block content %}
+    <style>
+    div {margin-left: auto;
+        margin-right: auto;}
+    h6 { color: red}
+    .cen{margin-left: 600px}
+
+
+
+
+</style>
+
+    <div class="row">
+
+    <div class="col-12">
+    <div class="card">
+    {{ form_start(f,{'attr':{'novalidate':'novalidate'}}) }}
+    <div class="d">
+    <h4 class="form-section"><i class="ft-clipboard"></i> User Story</h4>
+    <div class="form-group row">
+
+        <div class="col-md-9">
+            {{ form_widget(f.ideBacklogFeat,{ 'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+    <div class="form-group row">
+
+
+        <div class="col-md-9">
+            <div class="position-relative has-icon-left">
+                <div class="form-control-position">
+                    <i class="fa fa-file"></i>
+                </div>
+            {{ form_widget(f.userStoryBp,{ 'attr': {'class': 'form-control'}}) }}
+                <h6> {{ form_errors(f.userStoryBp)}}</h6>
+
+        </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        
+        <div class="col-md-9">
+            <div class="position-relative has-icon-left">
+            <div class="form-control-position">
+                <i class="fa fa-pencil"></i>
+            </div>
+
+            {{ form_widget(f.priorityBp,{ 'attr': {'class': 'form-control'}}) }}
+
+                <h6>{{ form_errors(f.priorityBp)}}</h6>
+
+        </div>
+    </div>
+    </div>
+
+    <div class="form-group row">
+
+        <div class="col-md-9">
+            {{ form_widget(f.captcha,{ 'attr': {'class': 'form-control'}})}}
+            <h6> {{ form_errors(f.captcha)}}</h6>
+        </div>
+    </div>
+    <div class="form-actions">
+        <label class="col-md-3 label-control" for="projectinput6"> </label>
+    <div class="cen">
+        {{ form_widget(f.save,{ 'attr': {'class': 'btn bg-blue width-200 white buttonAnimation'}}) }}
+    </div>
+    </div>
+    </div>
+
+    {{  form_end(f)}}
+{% endblock %}

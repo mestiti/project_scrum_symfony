@@ -1,0 +1,36 @@
+{% extends "back.html.twig" %}
+
+
+{% block content %}
+    <div class="blog">
+        <div class="container">
+            <div class="container">
+                <div class ="t" style="margin-top: 20px"> <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to the Community! </br> </br> </br> </br>  </h1></div>
+                <div class="blog-top">
+                    <div class="col-md-6 grid_3" style=" float: left;
+                                                         width: 110%;
+                                                         padding: 5px;
+                                                         margin-top: 10px;">
+                        <h2><a href="{{ path('post_new') }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start a Discussion</a></h2>
+                        <a href="{{ path('post_new') }}" ><img src="{{ asset('front/img/Forum/b1.png') }}" class="img-responsive" alt="">
+                        </a>
+                        <div class="blog-poast-info">
+                        </div>
+                    </div>
+                    <div class="col-md-6 grid_3" style=" float: left;
+                                                        width: 33.33%;
+                                                         padding: 5px;
+                                                         margin-top: 10px;">
+                        <h2><a href="{{ path('post_index') }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Browse Discussions </a></h2>
+                        <a href="{{ path('post_index') }}"><img src="{{ asset('front/img/Forum/b2.png') }}" class="img-responsive" alt=""></a>
+                        <div class="blog-poast-info">
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

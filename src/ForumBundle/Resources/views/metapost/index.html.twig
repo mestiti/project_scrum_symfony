@@ -1,0 +1,38 @@
+{% extends 'back.html.twig' %}
+{% block content %}
+    <h1>Metaposts list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Votetype</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for metapost in metaposts %}
+            <tr>
+                <td><a href="{{ path('metapost_show', { 'id': metapost.id }) }}">{{ metapost.id }}</a></td>
+                <td>{% if metapost.votetype %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('metapost_show', { 'id': metapost.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('metapost_edit', { 'id': metapost.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('metapost_new') }}">Create a new metapost</a>
+        </li>
+    </ul>
+{% endblock %}

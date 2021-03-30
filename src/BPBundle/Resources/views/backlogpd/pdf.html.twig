@@ -1,0 +1,71 @@
+<html>
+<head>
+        <style>
+                h2 { color: black;  top: 300px;position: absolute; right: 300px}
+                h1 { color: black; text-align: center; }
+                table { color: black;  width: 950px;
+                        text-align: center;
+                        position: absolute;
+                        top: 400px;
+                }
+                img {position: absolute; top: 1100px; right: 50px;width: 150px; height: 150px}
+
+        </style>
+
+</head>
+
+<body>
+
+
+
+
+<p>Date : {{ 'now' | date("m/d/Y") }}</p>
+<p>Product owner : {{app.user.username}}</p>
+
+<h2>Le Backlog produit du projet selectioné</h2>
+
+
+
+
+<table border="1" >
+        <thead>
+        <tr>
+                <th>num feature</th>
+                <th>feature</th>
+                <th>num user story</th>
+                <th>user story</th>
+                <th>prio</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+
+                {% for UserStoryBacklogProduit in a %}
+
+
+
+                <td> {{ UserStoryBacklogProduit.id_backlog_feature }}</td>
+                <td> {{ UserStoryBacklogProduit.feature }}</td>
+                <td> {{ UserStoryBacklogProduit.id_user_story_backlog_produit }}</td>
+                <td> {{ UserStoryBacklogProduit.user_story_bp }}</td>
+                <td> {{ UserStoryBacklogProduit.priority_bp }}</td>
+
+
+
+        </tr>
+        {%  endfor %}
+
+        </tbody>
+
+
+
+</table>
+
+
+
+
+<img  src="C:\wamp64\www\Youssef\web\back\app-assets\images\logo.png"/>
+
+        </body>
+        </html>

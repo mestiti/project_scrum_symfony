@@ -1,0 +1,48 @@
+
+{% extends 'back.html.twig' %}
+
+
+    {% block content %}
+
+
+
+
+
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="hidden-label-form-center">Traiter Demande Conge </h4>
+
+                </div>
+                <div class="card-content collpase show">
+                    <div class="card-body">
+
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-6">
+                                <div class="form-body">
+                                    {{ form_start(f) }}
+
+                                    {{ form_label(f.description, 'Etat' | trans, { 'attr': {'class': 'form-control input-xl'} }) }}
+                                    {{ form_widget(f.description, { 'attr': {'class': 'form-control'} }) }}
+
+
+                                    <div class="form-actions center">
+
+                                        {{ form_row(f.save, { 'attr': {'class': 'btn btn-primary' } } ) }}
+
+                                        {{ form_end(f) }}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    {% endblock %}
+
+

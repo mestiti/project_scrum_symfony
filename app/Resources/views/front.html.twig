@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% block head %}
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Grayrids">
+    <title>WEMANAGE</title>
+    <link rel="icon"
+          type="image/png"
+          href="{{ asset('front/img/favicon.png') }}">
+
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/vendors.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('front//css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/line-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/owl.theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/nivo-lightbox.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/color-switcher.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/menu_sideslide.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/responsive.css') }}">
+
+</head>
+
+{% endblock %}
+<body>
+<header id="slider-area">
+    {% block navbar %}
+    <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+        <div class="container">
+
+            <a class="navbar-brand" href="{{ path('homepage') }}"><img src="{{ asset('front/img/logo.png') }}"></a>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+
+                <ul class="nav navbar-nav mr-auto float-left">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#slider-area">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#portfolios">Works</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#team">Team</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#contact">Contact</a>
+                    </li>
+
+
+                </ul>
+
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <ul class="nav navbar-nav float-right">
+                    <li class="dropdown dropdown-user nav-item">
+                        <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                            <span class="avatar avatar-online"><img src="{{ asset('back/app-assets/images/portrait/small/av.png') }}" alt="avatar"><i></i></span>
+
+                            <span class="user-name">{{ app.user.username }} </span></a>
+
+
+                        <div class="dropdown-menu dropdown-menu-right">
+
+                            <a class="dropdown-item" href="#"><i class="fa fa-briefcase"></i> Projects</a>
+
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ path('fos_user_security_logout') }}"><i class="ft-power"></i> Logout</a>
+                        </div>
+                    </li>
+                    </ul>
+                {% elseif is_granted('ROLE_SM') %}
+                    <ul class="nav navbar-nav float-right">
+                        <li class="dropdown dropdown-user nav-item">
+                            <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                                <span class="avatar avatar-online"><img src="{{ asset('back/app-assets/images/portrait/small/av.png') }}" alt="avatar"><i></i></span>
+
+                                <span class="user-name">{{ app.user.username }} </span></a>
+
+
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="{{ path('fos_user_profile_show') }}"><i class="ft-user"></i> Profile</a>
+                                <a class="dropdown-item" href="{{ path('fos_user_profile_edit') }}"><i class="ft-user"></i> Edit Profile</a>
+                                <a class="dropdown-item" href="{{ url('fos_message_thread_new' )}}"><i class="ft-mail"></i> My Inbox</a>
+                                <a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-briefcase"></i> Projects</a>
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ path('fos_user_security_logout') }}"><i class="ft-power"></i> Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                {% elseif is_granted('ROLE_TEAM') %}
+                    <ul class="nav navbar-nav float-right">
+                        <li class="dropdown dropdown-user nav-item">
+                            <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                                <span class="avatar avatar-online"><img src="{{ asset('back/app-assets/images/portrait/small/av.png') }}" alt="avatar"><i></i></span>
+
+                                <span class="user-name">{{ app.user.username }}</span></a>
+
+
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="{{ path('fos_user_profile_show') }}"><i class="ft-user"></i> Profile</a>
+                                <a class="dropdown-item" href="{{ path('fos_user_profile_edit') }}"><i class="ft-user"></i> Edit Profile</a>
+                                <a class="dropdown-item" href="{{ url('fos_message_thread_new' )}}"><i class="ft-mail"></i> My Inbox</a>
+                                <a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-briefcase"></i> Projects</a>
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ path('fos_user_security_logout') }}"><i class="ft-power"></i> Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                {% elseif is_granted('ROLE_USER') %}
+                    <ul class="nav navbar-nav float-right">
+                        <li class="dropdown dropdown-user nav-item">
+                            <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                                <span class="avatar avatar-online"><img src="{{asset('uploads/images/'  ~ app.user.ImageUser) }}" alt="avatar"><i></i></span>
+
+                                <span class="user-name">{{ app.user.username }} </span></a>
+
+
+                            <div class="dropdown-menu dropdown-menu-right">
+
+
+
+                                <a class="dropdown-item" href="{{ path('fos_user_profile_show') }}"><i class="ft-user"></i> Profile</a>
+                                <a class="dropdown-item" href="{{ path('fos_user_profile_edit') }}"><i class="ft-user"></i> Edit Profile</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-briefcase"></i> Projects</a>
+
+                                <a class="dropdown-item" href="{{ path('bp_affichage') }}"><i class="fa fa-file"></i>features</a>
+                                <a class="dropdown-item" href="{{ path('bp_useraff') }}"> <i class="fa fa-file"></i>user stories</a>
+
+
+                                <a class="dropdown-item" href="{{ path('Statistics') }}"> <i class="fa fa-bar-chart"></i> statistics</a>
+                                <a class="dropdown-item" href="{{ path('bp_Progress') }}"> <i class="fa fa-line-chart"></i> progress</a>
+
+
+
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ path('fos_user_security_logout') }}"><i class="ft-power"></i> Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                    {% else %}
+                <ul class="nav navbar-nav mr-auto float-left">
+                        <a class="nav-link page-scroll" href="{{ path('fos_user_security_login') }}">login</a>
+                        <a class="nav-link page-scroll" href="{{ path('fos_user_registration_register') }}">Register</a>
+                </ul>
+                    {% endif %}
+
+
+
+            </div>
+        </div>
+    </nav>
+    {% endblock %}
+    <div id="carousel-area">
+        <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-slider" data-slide-to="1"></li>
+                <li data-target="#carousel-slider" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <img src="{{ asset('front/img/slider/1.png') }}" alt="">
+                    <div class="carousel-caption text-left">
+
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('front/img/slider/2.png') }}" alt="">
+                    <div class="carousel-caption text-center">
+
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('front/img/slider/3.png') }}" alt="">
+                    <div class="carousel-caption text-center">
+
+
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carousel-slider" role="button" data-slide="prev">
+                <span class="carousel-control" aria-hidden="true"><i class="lni-chevron-left"></i></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-slider" role="button" data-slide="next">
+                <span class="carousel-control" aria-hidden="true"><i class="lni-chevron-right"></i></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</header>
+{% block content %}
+<section id="services" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Our Services</h2>
+            <span>Services</span>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="item-boxes services-item wow fadeInDown" data-wow-delay="0.2s">
+                    <div class="icon color-1">
+                        <i class="lni-pencil"></i>
+                    </div>
+                    <h4>Content Writing</h4>
+                    <p>our content includes sales copy, e-books, podcasts, and text for graphics.
+                        ou writers are responsible for making sure our sites' pages and content connect and also for setting the overall tone of the site.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="item-boxes services-item wow fadeInDown" data-wow-delay="0.4s">
+                    <div class="icon color-2">
+                        <i class="lni-cog"></i>
+                    </div>
+                    <h4>Web Development</h4>
+                    <p>our Web developers worked on many sites and have enough experience to create the best web site smooth and fast.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="item-boxes services-item wow fadeInDown" data-wow-delay="0.6s">
+                    <div class="icon color-3">
+                        <i class="lni-stats-up"></i>
+                    </div>
+                    <h4>Graphic Design</h4>
+                    <p>our designers work on 3 important aspects:
+                        pleasurable + meaninful + usable for our visitors to please their eyes.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="item-boxes services-item wow fadeInDown" data-wow-delay="0.8s">
+                    <div class="icon color-4">
+                        <i class="lni-layers"></i>
+                    </div>
+                    <h4>UI/UX Design</h4>
+                    <p>our ui designers made sure every single visual element feels united, both aesthetically, and in purpose.
+                        UX designers work to not let the navigation  complicated or unintuitive, then a lousy user experience is likely.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="item-boxes services-item wow fadeInDown" data-wow-delay="1s">
+                    <div class="icon color-5">
+                        <i class="lni-tab"></i>
+                    </div>
+                    <h4>App Development</h4>
+                    <p>our clients can find we manage on a desktop application or on our mobile application. each one is created to feat our visitor's needs.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="item-boxes services-item wow fadeInDown" data-wow-delay="1.2s">
+                    <div class="icon color-6">
+                        <i class="lni-briefcase"></i>
+                    </div>
+                    <h4>Digital Marketing</h4>
+                    <p>Digital content is also our priority and marketing is so common that consumers now expect and rely on it as a way to learn about brands and that's why we worked on this aspect.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="features" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Why Choose Us</h2>
+            <span>Why</span>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="featured-box">
+                    <div class="featured-icon">
+                        <i class="lni-layout"></i>
+                    </div>
+                    <div class="featured-content">
+                        <div class="icon-o"><i class="lni-layout"></i></div>
+                        <h4>Refreshing Design</h4>
+                        <p>Adding a new menu or increasing the size of our images, will take a few minutes but again, they may have a big impact on the site’s overall look and feel to users.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="featured-box">
+                    <div class="featured-icon">
+                        <i class="lni-tab"></i>
+                    </div>
+                    <div class="featured-content">
+                        <div class="icon-o"><i class="lni-tab"></i></div>
+                        <h4>Fully Responsive</h4>
+                        <p>we allow our site to adapt to different screen sizes which means that whatever device our visitors are using they get the best possible view of our business and services.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- End featured -->
+            <!-- Start featured -->
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="featured-box">
+                    <div class="featured-icon">
+                        <i class="lni-rocket"></i>
+                    </div>
+                    <div class="featured-content">
+                        <div class="icon-o"><i class="lni-rocket"></i></div>
+                        <h4>Fast & Smooth</h4>
+                        <p>Nothing is more frustrating than a slow website. everyday we improve our hosting plan,understand HTTP requests,optimize JS and CSS files.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- End featured -->
+            <!-- Start featured -->
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="featured-box">
+                    <div class="featured-icon">
+                        <i class="lni-database"></i>
+                    </div>
+                    <div class="featured-content">
+                        <div class="icon-o"><i class="lni-database"></i></div>
+                        <h4>SEO Optimized</h4>
+                        <p>the optimizing web pages and their content is easily discoverable by users searching for terms relevant to our website. we make web pages easier for search engine indexing.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- End featured -->
+            <!-- Start featured -->
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="featured-box">
+                    <div class="featured-icon">
+                        <i class="lni-leaf"></i>
+                    </div>
+                    <div class="featured-content">
+                        <div class="icon-o"><i class="lni-leaf"></i></div>
+                        <h4>Clean Code</h4>
+                        <p>Each function, each class, each module exposes a single-minded attitude that remains entirely undistracted, and unpolluted, by the surrounding details.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- End featured -->
+            <!-- Start featured -->
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="featured-box">
+                    <div class="featured-icon">
+                        <i class="lni-pencil"></i>
+                    </div>
+                    <div class="featured-content">
+                        <div class="icon-o"><i class="lni-pencil"></i></div>
+                        <h4>Free 24/7 Support</h4>
+                        <p>customer support team working to quickly resolve any eventual problem the customer might experiences with the received services. The faster and more diverse.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- End featured -->
+        </div>
+    </div>
+</section>
+<!-- Features Section End -->
+
+
+<!-- Portfolio Section -->
+<section id="portfolios" class="section">
+    <!-- Container Starts -->
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Our Works</h2>
+            <span>Works</span>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Portfolio Controller/Buttons -->
+                <div class="controls text-center">
+                    <a class="filter active btn btn-common btn-effect" data-filter="all">
+                        All
+                    </a>
+                    <a class="filter btn btn-common btn-effect" data-filter=".design">
+                        Design
+                    </a>
+                    <a class="filter btn btn-common btn-effect" data-filter=".development">
+                        Development
+                    </a>
+                    <a class="filter btn btn-common btn-effect" data-filter=".print">
+                        Print
+                    </a>
+                </div>
+                <!-- Portfolio Controller/Buttons Ends-->
+            </div>
+        </div>
+
+        <!-- Portfolio Recent Projects -->
+        <div id="portfolio" class="row">
+            <div class="col-lg-4 col-md-6 col-xs-12 mix development print">
+                <div class="portfolio-item">
+                    <div class="shot-item">
+                        <img src="{{ asset('front/img/portfolio/img-1.png') }}" alt="" />
+                        <div class="single-content">
+                            <div class="fancy-table">
+                                <div class="table-cell">
+                                    <div class="zoom-icon">
+                                        <a class="lightbox" href="{{ asset('front/img/portfolio/img-1.png') }}"><i class="lni-zoom-in item-icon"></i></a>
+                                    </div>
+                                    <a href="#">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12 mix design print">
+                <div class="portfolio-item">
+                    <div class="shot-item">
+                        <img src="{{ asset('front/img/portfolio/img-2.png') }}" alt="" />
+                        <div class="single-content">
+                            <div class="fancy-table">
+                                <div class="table-cell">
+                                    <div class="zoom-icon">
+                                        <a class="lightbox" href="{{ asset('front/img/portfolio/img-2.png') }}"><i class="lni-zoom-in item-icon"></i></a>
+                                    </div>
+                                    <a href="#">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12 mix development">
+                <div class="portfolio-item">
+                    <div class="shot-item">
+                        <img src="{{ asset('front/img/portfolio/img-3.png') }}" alt="" />
+                        <div class="single-content">
+                            <div class="fancy-table">
+                                <div class="table-cell">
+                                    <div class="zoom-icon">
+                                        <a class="lightbox" href="{{ asset('front/img/portfolio/img-3.png') }}"><i class="lni-zoom-in item-icon"></i></a>
+                                    </div>
+                                    <a href="#">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12 mix development design">
+                <div class="portfolio-item">
+                    <div class="shot-item">
+                        <img src="{{ asset('front/img/portfolio/img-4.png') }}" alt="" />
+                        <div class="single-content">
+                            <div class="fancy-table">
+                                <div class="table-cell">
+                                    <div class="zoom-icon">
+                                        <a class="lightbox" href="{{ asset('front/img/portfolio/img-4.png') }}"><i class="lni-zoom-in item-icon"></i></a>
+                                    </div>
+                                    <a href="#">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12 mix development">
+                <div class="portfolio-item">
+                    <div class="shot-item">
+                        <img src="{{ asset('front/img/portfolio/img-5.png') }}" alt="" />
+                        <div class="single-content">
+                            <div class="fancy-table">
+                                <div class="table-cell">
+                                    <div class="zoom-icon">
+                                        <a class="lightbox" href="{{ asset('front/img/portfolio/img-5.png') }}"><i class="lni-zoom-in item-icon"></i></a>
+                                    </div>
+                                    <a href="#">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12 mix print design">
+                <div class="portfolio-item">
+                    <div class="shot-item">
+                        <img src="{{ asset('front/img/portfolio/img-6.png') }}" alt="" />
+                        <div class="single-content">
+                            <div class="fancy-table">
+                                <div class="table-cell">
+                                    <div class="zoom-icon">
+                                        <a class="lightbox" href="{{ asset('front/img/portfolio/img-6.png') }}"><i class="lni-zoom-in item-icon"></i></a>
+                                    </div>
+                                    <a href="#">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Container Ends -->
+</section>
+<!-- Portfolio Section Ends -->
+
+
+
+
+
+
+
+
+<!-- Team section Start -->
+<section id="team" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Our Team</h2>
+            <span>Team</span>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-xs-12">
+                <div class="single-team">
+                    <img src="{{ asset('front/img/team/youssef.png') }}" alt="">
+                    <div class="team-details">
+                        <div class="team-inner">
+                            <h4 class="team-title">Darderi Youssef</h4>
+                            <p>Chief Technical Officer</p>
+                            <ul class="social-list">
+                                <li class="facebook"><a href="https://www.facebook.com/profile.php?id=100005419128735"target="_blank"><i class="lni-facebook-filled"></i></a></li>
+
+                                <li class="linkedin"><a href="#"><i class="lni-linkedin-fill"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-xs-12">
+                <div class="single-team">
+                    <img src="{{ asset('front/img/team/yasmine.png') }}" alt="">
+                    <div class="team-details">
+                        <div class="team-inner">
+                            <h4 class="team-title">Mestiri Yasmine</h4>
+                            <p>Marketing Executive</p>
+                            <ul class="social-list">
+                                <li class="facebook"><a href="https://www.facebook.com/profile.php?id=100011374575953"target="_blank"><i class="lni-facebook-filled"></i></a></li>
+
+                                <li class="linkedin"><a href="#"><i class="lni-linkedin-fill"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-xs-12">
+                <div class="single-team">
+                    <img src="{{ asset('front/img/team/seif.png') }}" alt="">
+                    <div class="team-details">
+                        <div class="team-inner">
+                            <h4 class="team-title">Ben Sliman Seif</h4>
+                            <p>Business Manager</p>
+                            <ul class="social-list">
+                                <li class="facebook"><a href="https://www.facebook.com/sifonnn88"target="_blank"><i class="lni-facebook-filled"></i></a></li>
+
+                                <li class="linkedin"><a href="#"><i class="lni-linkedin-fill"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-xs-12">
+                <div class="single-team">
+                    <img src="{{ asset('front/img/team/wiem.png') }}" alt="">
+                    <div class="team-details">
+                        <div class="team-inner">
+                            <h4 class="team-title">Touj Wiem</h4>
+                            <p>Graphic Designer</p>
+                            <ul class="social-list">
+                                <li class="facebook"><a href="https://www.facebook.com/profile.php?id=100010256193156"target="_blank"><i class="lni-facebook-filled"></i></a></li>
+
+                                <li class="linkedin"><a href="#"><i class="lni-linkedin-fill"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section Start -->
+<section id="contact" class="section">
+    <div class="contact-form">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <span>Contact</span>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</section>
+
+    <section id="google-map-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 padding-0">
+                    <object style="border:0; height: 450px; width: 100%;" data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34015.943594576835!2d-106.43242624069771!3d31.677719472407432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e75d90e99d597b%3A0x6cd3eb9a9fcd23f1!2sCourtyard+by+Marriott+Ciudad+Juarez!5e0!3m2!1sen!2sbd!4v1533791187584"></object>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock%}
+{% block footer %}
+<footer>
+    <div id="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="site-info float-left">
+                        <p>Created by <a href="http://uideck.com" rel="nofollow">WEMANAGE</a></p>
+                    </div>
+                    <div class="float-right">
+                        <ul class="nav nav-inline">
+                            <li class="nav-item">
+
+                            </li>
+                            <li class="nav-item">
+
+                            </li>
+                            <li class="nav-item">
+                            </li>
+                            <li class="nav-item">
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+{% endblock %}
+{% block java %}
+    <script src="{{ asset('back/app-assets/vendors/js/vendors.min.js') }}"></script>
+    <script src="{{ asset('front/js/jquery.mixitup.js') }}"></script>
+    <script src="{{ asset('front/js/owl.carousel.js') }}"></script>
+    <script src="{{ asset('front/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('front/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('front/js/contact-form-script.js') }}"></script>
+    <script src="{{ asset('front/js/main.js') }}"></script>
+{% endblock %}
+
+</body>
+</html>

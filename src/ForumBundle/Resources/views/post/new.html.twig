@@ -1,0 +1,35 @@
+{% extends 'back.html.twig' %}
+
+        {% block content %}
+            <div class="blog">
+                <div class="container">
+                    <div class="blog-top">
+
+         <div style="border-radius: 1px;
+                background-color: #3bafda;
+                margin-top: 50px;
+                margin-bottom: 20px ;
+                padding: 20px;"><h3 style="text-align: left;color: white">Post creation</h3></div>
+         {% form_theme form 'bootstrap_4_layout.html.twig' %}
+         {{ form_start(form) }}
+            <div style="border-radius: 1px;
+                    background-color: #e6e6e6;
+                    padding: 30px;">
+                <h4 style="padding-bottom: 10px;">Your Title:</h4>
+                <div>{{ form_widget(form.title) }}</div>
+
+                <div ><h4 style="padding-top: 20px;padding-bottom: 10px;">Details:</h4>
+                {{ form_widget(form.text) }}
+                </div>
+            </div>
+                {{ form_widget(form) }}
+              <div class="button"><input type="submit" value="Create"  class="btn btn-info square btn-min-width mr-1 mb-1" style="width: 30%"/></div>
+         {{ form_end(form) }}
+                        <a href="{{ path('post_index') }}"  class="btn btn-dark square btn-min-width mr-1 mb-1">Back</a>
+
+
+
+    </div>
+    </div>
+</div>
+        {% endblock %}

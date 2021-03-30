@@ -1,0 +1,222 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% block head %}
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="author" content="Grayrids">
+        <title>Registration</title>
+        <link rel="icon"
+              type="image/png"
+              href="{{ asset('front/img/favicon.png') }}">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{{ asset('front//css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/css/line-icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/css/owl.carousel.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/css/owl.theme.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/css/nivo-lightbox.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/css/magnific-popup.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/css/animate.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/css/color-switcher.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/css/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/css/responsive.css') }}">
+
+
+
+
+        <!-- CSS Global Compulsory -->
+        <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }} ">
+
+
+
+        <!-- CSS Implementing Plugins -->
+        <link rel="stylesheet" href="{{ asset('assets/plugins/animate.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/plugins/line-icons/line-icons.css') }} ">
+        <link rel="stylesheet" href="{{ asset('assets/plugins/font-awesome/css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css') }}">
+
+        <!-- CSS Theme -->
+        <link rel="stylesheet" href="{{ asset('assets/css/theme-colors/dark-blue.css') }}" id="style_color">
+        <link rel="stylesheet" href="{{ asset('assets/css/theme-skins/dark.css') }}">
+    </head>
+{% endblock %}
+
+ {% block navbar %}
+     <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+         <div class="container">
+
+             <a class="navbar-brand" href="{{ path('homepage') }}"><img src="{{ asset('front/img/logo.png') }}"></a>
+
+             <div class="collapse navbar-collapse" id="navbarCollapse">
+                 <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                     <li class="nav-item">
+                         <a class="nav-link page-scroll" href="{{ path('homepage') }}">Home</a>
+                     </li>
+
+                     <li class="nav-item">
+                         <a class="nav-link page-scroll" href="{{ path('fos_user_security_login') }}">Login</a>
+                     </li>
+
+                 </ul>
+             </div>
+         </div>
+     </nav>
+ {% endblock %}
+
+{% block body %}
+    <body>
+
+
+
+    <div class="container content ">
+        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register sky-form'}}) }}
+
+        <fieldset>
+            <div>
+
+
+                <div class="row">
+                    <div class="col col-6">
+                        {{ form_label(form.Nom, 'Nom' | trans, { 'attr': {'class': ''} }) }}
+                        <span class="color-red">*</span>
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            {{ form_widget(form.Nom, { 'attr': {'class': 'form-control'} }) }}
+                        </div>
+                    </div>
+                    <div class="col col-6">
+                        {{ form_label(form.prenom, 'prenom' | trans, { 'attr': {'class': 'form-control margin-bottom-20'} }) }}
+                        <span class="color-red">*</span>
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            {{ form_widget(form.prenom, { 'attr': {'class': 'form-control margin-bottom-20'} }) }}
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col col-6">
+                        {{ form_label(form.username, 'form.username' | trans, { 'attr': {'class': 'form-control margin-bottom-20'} }) }}
+                        <span class="color-red">*</span>
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            {{ form_widget(form.username, { 'attr': {'class': 'form-control margin-bottom-20'} }) }}
+                        </div>
+                    </div>
+                    <div class="col col-6">
+                        {{ form_label(form.email, 'form.email' | trans, { 'attr': {'class': 'form-control margin-bottom-20'} }) }}
+                        <span class="color-red">*</span>
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon"><i class="fa fa-weixin"></i></span>
+                            {{ form_widget(form.email, { 'attr': {'class': 'form-control margin-bottom-20'} }) }}
+                        </div>
+                    </div>
+                </div>
+
+
+                {{ form_label(form.Address, 'votre adresse' | trans, { 'attr': {'class': 'form-control margin-bottom-20'} }) }}
+                <span class="color-red">*</span>
+                <div class="input-group margin-bottom-20">
+                    <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+                    {{ form_widget(form.Address, { 'attr': {'class': 'form-control margin-bottom-20'} }) }}
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col col-6">
+                        {{ form_label(form.date_naissance, 'Date de naissance' | trans, { 'attr': {'class': 'form-control margin-bottom-20'} }) }}
+                        <span class="color-red">*</span>
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            {{ form_widget(form.date_naissance, { 'attr': {'class': 'form-control hasDatepicker margin-bottom-20'} }) }}
+                        </div>
+                    </div>
+                    <div class="col col-6">
+                        {{ form_label(form.numero_tel, 'Num Tel' | trans, { 'attr': {'class': 'form-control margin-bottom-20'} }) }}
+                        <span class="color-red">*</span>
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon"><i class="fa  fa-phone"></i></span>
+                            {{ form_widget(form.numero_tel, { 'attr': {'id':'my_id','class': 'form-control margin-bottom-20 ntel'} }) }}
+                        </div>
+                    </div>
+                </div>
+                {{ form_label(form.image_user, 'image' | trans, { 'attr': {'class': 'form-control margin-bottom-20'} }) }}
+                <span class="color-red">*</span>
+                <div class="input-group margin-bottom-20">
+                    <span class="input-group-addon"><i class="fa fa-video-camera"></i></span>
+                    {{ form_widget(form.image_user, { 'attr': {'class': 'form-control margin-bottom-20'} }) }}
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        {{ form_label(form.plainPassword.first, 'form.password' | trans, { 'attr': {'class': 'form-control margin-bottom-20'} }) }}
+                        <span class="color-red">*</span>
+                        {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control margin-bottom-20'} }) }}
+
+                    </div>
+                    <div class="col-sm-6">
+                        {{ form_label(form.plainPassword.second, 'form.password_confirmation' | trans, { 'attr': {'class': 'form-control margin-bottom-20'} }) }}
+                        <span class="color-red">*</span>
+                        {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control margin-bottom-20'} }) }}
+                    </div>
+                </div>
+            </div>
+
+
+        </fieldset>
+        <footer>
+            <div class="col-lg-6 checkbox">
+                <label class="checkbox">
+
+                </label>
+            </div>
+
+            <div class="col-lg-6 text-right">
+                <input class="btn btn-primary"  id="submit-button" type="submit" value="{{ 'registration.submit'|trans }}" />
+            </div>
+        </footer>
+    </div>
+    </body>
+    {{ form_end(form) }}
+
+{% endblock %}
+{% block footer %}
+    <footer>
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info float-left">
+                            <p>Created by <a href="http://uideck.com" rel="nofollow">WEMANAGE</a></p>
+                        </div>
+                        <div class="float-right">
+                            <ul class="nav nav-inline">
+                                <li class="nav-item">
+
+                                </li>
+                                <li class="nav-item">
+
+                                </li>
+                                <li class="nav-item">
+                                </li>
+                                <li class="nav-item">
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+{% endblock %}

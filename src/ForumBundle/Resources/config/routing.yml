@@ -1,0 +1,94 @@
+forum_homepage:
+    path:     /wpage
+    defaults: { _controller: ForumBundle:Default:index }
+solved:
+    path:     /solved/{id}
+    defaults: { _controller: ForumBundle:Post:solved }
+comment:
+    path:     /comment/{id}
+    defaults: { _controller: ForumBundle:Post:comment }
+upvote:
+    path:     /upvote/{id}
+    defaults: { _controller: ForumBundle:Post:upvote }
+post_index:
+    path:     /index
+    defaults: { _controller: ForumBundle:Post:index }
+post_new:
+    path:     /new
+    defaults: { _controller: ForumBundle:Post:new }
+post_show:
+    path:     /show/{id}
+    defaults: { _controller: ForumBundle:Post:show }
+post_edit:
+    path:     /edit/{id}
+    defaults: { _controller: ForumBundle:Post:edit }
+post_delete:
+    path:     /delete/{id}
+    defaults: { _controller: ForumBundle:Post:delete }
+metapost_index:
+    path:     /index
+    defaults: { _controller: ForumBundle:Metapost:index }
+metapost_new:
+    path:     /new
+    defaults: { _controller: ForumBundle:Metapost:new }
+metapost_show:
+    path:     /show/{id}
+    defaults: { _controller: ForumBundle:Metapost:show }
+metapost_edit:
+    path:     /edit/{id}
+    defaults: { _controller: ForumBundle:Metapost:edit }
+metapost_delete:
+    path:     /delete/{id}
+    defaults: { _controller: ForumBundle:Metapost:delete }
+metacomment_index:
+    path:     /index
+    defaults: { _controller: ForumBundle:Metacomment:index }
+metacomment_new:
+    path:     /new
+    defaults: { _controller: ForumBundle:Metacomment:new }
+metacomment_show:
+    path:     /show/{id}
+    defaults: { _controller: ForumBundle:Metacomment:show }
+metacomment_edit:
+    path:     /edit/{id}
+    defaults: { _controller: ForumBundle:Metacomment:edit }
+metacomment_delete:
+    path:     /delete/{id}
+    defaults: { _controller: ForumBundle:Metacomment:delete }
+comment_index:
+    path:     /
+    defaults: { _controller: "ForumBundle:Comment:index" }
+    methods:  GET
+
+comment_show:
+    path:     /{id}/show
+    defaults: { _controller: "ForumBundle:Comment:show" }
+    methods:  GET
+
+comment_new:
+    path:     /new
+    defaults: { _controller: "ForumBundle:Comment:new" }
+    methods:  [GET, POST]
+
+comment_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ForumBundle:Comment:edit" }
+    methods:  [GET, POST]
+
+comment_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ForumBundle:Comment:delete" }
+    methods:  DELETE
+ajax_search:
+    path:     /search
+    defaults: { _controller: "ForumBundle:Post:search" }
+    methods:  GET
+
+forumdash:
+    path:     /forumdash
+    defaults: { _controller: ForumBundle:Admin:index }
+
+graphePie:
+    path:     /pie
+    defaults: { _controller: ForumBundle:Admin:stat}
+

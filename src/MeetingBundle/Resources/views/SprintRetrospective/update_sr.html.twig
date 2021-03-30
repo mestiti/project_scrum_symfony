@@ -1,0 +1,54 @@
+{% extends 'back.html.twig' %}
+
+    {% block content %}
+
+
+        <div class="col-md-12" xmlns="http://www.w3.org/1999/html">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="hidden-label-form-center">Modifier Sprint Retrospective </h4>
+
+                </div>
+                <div class="card-content collpase show">
+                    <div class="card-body">
+
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-6">
+                                <div class="form-body">
+                                    {{ form_start(f) }}
+                                    {{ form_label(f.descriptionTodo, 'Remarque TODO' ) }}
+                                    {{ form_widget(f.descriptionTodo, { 'attr': {'class': 'form-control'} }) }}
+
+
+
+                                    {{ form_label(f.dateSprintRetrospective, 'Date' | trans, { 'attr': {'class': 'form-control'} }) }}
+                                    {{ form_widget(f.dateSprintRetrospective, { 'attr': {'class': 'form-control'} }) }}
+
+                                    {{ form_label(f.ideProjet, 'Nom Projet' )}}
+                                    {{ form_widget(f.ideProjet, { 'attr': {'class': 'form-control'} }) }}
+
+
+
+                                    {{ form_label(f.ideEquipe, 'Nom Equipe' )}}
+                                    {{ form_widget(f.ideEquipe, { 'attr': {'class': 'form-control'} }) }}
+
+                                    {{ form_label(f.ideSprint, 'Nom Sprint' )}}
+                                    {{ form_widget(f.ideSprint, { 'attr': {'class': 'form-control'} }) }}
+
+                                    <div class="form-actions center">
+
+                                        {{ form_row(f.save, { 'attr': {'class': 'btn btn-primary' } } ) }}
+
+                                        {{ form_end(f) }}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    {% endblock %}

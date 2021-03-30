@@ -1,0 +1,13 @@
+add_project:
+    path:     /add_project
+    defaults: { _controller: ProjectsBundle:Projects:add }
+project_delete:
+    path:     /delete_project/{id}
+    defaults: { _controller: ProjectsBundle:Projects:delete }
+add_team:
+    path:     /add_team
+    defaults: { _controller: ProjectsBundle:Team:addteam }
+
+team_delete:
+    path:     /delete_team/{id}
+    defaults: { _controller: ProjectsBundle:Team:delete }

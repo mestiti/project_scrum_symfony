@@ -1,0 +1,28 @@
+{% extends 'back.html.twig' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="blog-top" style="margin-top: 50px;
+                                     " >
+    <div style="border-radius: 1px;
+                background-color: #4E69AB;
+                padding: 10px;"><h3 style="text-align: left;color: white">Add Comment</h3></div>
+    <div style="border-radius: 1px;
+                    background-color: #e6e6e6;
+                    padding: 30px;
+                    margin-top: 50px">
+        {% form_theme form 'bootstrap_4_layout.html.twig' %}
+        {{ form_start(form) }}
+        <div style="width: 98%; margin-left: 1%;padding-bottom: 10px">{{ form_widget(form.content) }}</div>
+        <input style="margin-left: 1%" type="submit" value="ADD" class="btn btn-success"/>
+        {{ form_end(form) }}
+    </div>
+
+
+            <a href="{{ path('post_show', { 'id': 14 }) }}" class="btn btn-dark square btn-min-width mr-1 mb-1" style="margin-top: 10px">Back to Post</a>
+
+
+
+        </div></div>
+{% endblock %}

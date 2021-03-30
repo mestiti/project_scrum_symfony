@@ -1,0 +1,91 @@
+{% extends 'back.html.twig'%}
+{% block content %}
+    welcome {{ app.user.username }}
+    {{ form_start(f) }}
+
+
+
+    <section id="basic-form-layouts">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title" id="bordered-layout-basic-form">
+
+                        <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                        <div class="heading-elements">
+                            <ul class="list-inline mb-0">
+                                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                <li><a data-action="close"><i class="ft-x"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-content collpase show">
+                        <div class="card-body">
+                            <div class="card-text">
+                                <p>Creation de l'environnement de travail</p>
+                            </div>
+
+                            <div class="form-body">
+                                <h4 class="form-section"><i class="ft-clipboard"></i> backlog sprint</h4>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="projectinput1">Description sprint</label>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            {{ form_widget(f.description,{ 'attr': {'class': 'form-control'}}) }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="projectinput1">Date début sprint</label>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            {{ form_widget(f.dateDebutSprint,{ 'attr': {'class': 'form-control'}}) }}
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="projectinput1">Date fin sprint</label>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            {{ form_widget(f.dateFinSprint,{ 'attr': {'class': 'form-control'}}) }}
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="projectinput1">nombre des userStoryies</label>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            {{ form_widget(f.listeUserSrotyBs,{ 'attr': {'class': 'mt-1 mb-3'}}) }}
+                                        </div>
+                                    </div>
+
+                                </div>
+                                {{ form_widget(f.save,{ 'attr': {'class': 'btn btn-primary'}}) }}
+
+
+                                {{ form_end(f) }}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+
+{% endblock %}

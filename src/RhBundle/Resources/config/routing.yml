@@ -1,0 +1,77 @@
+rh_homepage:
+    path:     /
+    defaults: { _controller: RhBundle:Default:index }
+Afficher:
+    path:     /Afficher
+    defaults: { _controller: RhBundle:Absence:Afficher }
+ajout:
+    path:     /ajout
+    defaults: { _controller: RhBundle:Absence:create }
+
+trouverDomaine:
+    path:     /trouver
+    defaults: { _controller: RhBundle:Absence:trouverDomaine }
+Afficherab:
+    path:     /Afficherab
+    defaults: { _controller: RhBundle:Absence:Afficherab }
+update1:
+    path:     /update1/{id}
+    defaults: { _controller: RhBundle:Absence:update1 }
+test:
+    path:     /test
+    defaults: { _controller: RhBundle:Absence:test }
+delete1:
+    path:     /delete1/{id}
+    defaults: { _controller: RhBundle:Absence:delete1 }
+
+ajoutdemande:
+    path:     /ajoutdemande
+    defaults: { _controller: RhBundle:DemandeConge:createdemande }
+affdemande:
+    path:     /affdemande
+    defaults: { _controller: RhBundle:DemandeConge:AfficherDemande}
+ajouterab:
+    path:     /ajab/{id}
+    defaults: { _controller: RhBundle:Absence:ajouter_absence }
+ajoutersp:
+    path:     /ajoutsp
+    defaults: { _controller: RhBundle:Sp:create }
+affecter:
+    path:     /affecter/{id}
+    defaults: { _controller: RhBundle:DemandeConge:ajouter_conger}
+afficherc:
+    path:     /afficherc
+    defaults: { _controller: RhBundle:DemandeConge:Afficherconge }
+deletec:
+    path:     /deletec/{id}
+    defaults: { _controller: RhBundle:DemandeConge:deletec }
+test1:
+    path:     /test1
+    defaults: { _controller: RhBundle:Absence:test1 }
+burn:
+    path:     /burn
+    defaults: { _controller: RhBundle:Test:Burn }
+find_Absence:
+    path:     /absence/{username}
+    defaults: { _controller: RhBundle:Absence:find_Absence }
+newab:
+    path:     /task/new/{idc}/{heure}/{nbre}/{date}
+    defaults: { _controller: RhBundle:Absence:newab }
+deletemobab:
+    path:     /del/{id}
+    defaults: { _controller: RhBundle:Absence:deletemobab }
+
+update_mob:
+    path:     /mod/{date}/{nbre}/{heure}/{id}
+    defaults: { _controller: RhBundle:Absence:update_mob }
+
+findBYdate:
+    path:     /calendriermobile/{date}
+    defaults: { _controller: RhBundle:Absence:findBYdate }
+
+newdemande:
+    path:     /dm/new/{iddem}/{dd}/{df}/{raison}
+    defaults: { _controller: RhBundle:DemandeConge:newdemande }
+find_conge:
+    path:     /affdm/{username}
+    defaults: { _controller: RhBundle:DemandeConge:find_conge }

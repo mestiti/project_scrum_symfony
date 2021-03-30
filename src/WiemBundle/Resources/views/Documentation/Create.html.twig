@@ -1,0 +1,85 @@
+{% extends 'back.html.twig'%}
+
+{% block content %}
+
+
+    <div class="container mt-4">
+
+    </div>
+    {{ form_start (f) }}
+    <section id="basic-form-layouts">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        {% set break = false %}
+
+                    </div>
+                </div>
+                <div class="card-content collpase show">
+                    <div class="card-body">
+
+
+                        <div class="form-body">
+                            <h4 class="form-section"><i class="ft-clipboard"></i>Ajouter Document</h4>
+
+                            <div class="form-group row">
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+
+                                        {{ form_row(f.nom) }}
+
+
+
+                                        <div class="form-group row">
+
+                                            <label class="col-md-3 label-control" for="projectinput1">Nom
+                                            </label>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    {{ form_widget(f.spec,{ 'attr': {'class': 'form-control'}}) }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="form-group row">
+
+                                            <label class="col-md-3 label-control" for="projectinput1">Description
+                                            </label>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    {{ form_widget(f.descr,{ 'attr': {'class': 'form-control'}}) }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        {{ form_widget(f.Submit,{ 'attr': {'class': 'btn btn-primary'}}) }}
+
+
+
+
+
+
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+                {{ form_end(f) }}
+    </section>
+
+{% endblock %}

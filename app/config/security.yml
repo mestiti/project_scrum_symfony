@@ -1,0 +1,39 @@
+# app/config/security.yml
+security:
+    encoders:
+        EntitiesBundle\Entity\User: bcrypt
+        FOS\UserBundle\Model\UserInterface: bcrypt
+
+    role_hierarchy:
+        ROLE_USER:       ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+        ROLE_SM_ADMIN:    ROLE_SM
+        ROLE_TEAM:        ROLE_TEAM
+        ROLE_PO:        ROLE_PO
+
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
+
+    firewalls:
+        main:
+
+            pattern: ^/
+            user_checker: security.user_checker
+            form_login:
+
+                csrf_token_generator: security.csrf.token_manager
+            remember_me:
+                secret: '%secret%'
+            logout: ~
+            anonymous:    ~
+
+
+    access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/back, role: ROLE_ADMIN }
+        - { path: ^/backSM, role: ROLE_SM }
+        - { path: ^/backTeam, role: ROLE_TEAM }
+

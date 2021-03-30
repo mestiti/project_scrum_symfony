@@ -1,0 +1,32 @@
+{% extends 'back.html.twig' %}
+
+{% block content %}
+    <h1>Metacomment</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ metacomment.id }}</td>
+            </tr>
+            <tr>
+                <th>Metacomment</th>
+                <td>{% if metacomment.metacomment %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('metacomment_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('metacomment_edit', { 'id': metacomment.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

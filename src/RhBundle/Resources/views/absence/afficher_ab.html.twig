@@ -1,0 +1,376 @@
+
+{% block head %}
+    <!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Robust admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template.">
+    <meta name="keywords" content="admin template, robust admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
+    <meta name="author" content="PIXINVENT">
+    <title>WEMANAGE BACK</title>
+    <link rel="apple-touch-icon" href="{{ asset('back/app-assets/images/ico/apple-icon-120.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('back/app-assets/images/favicon/favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CMuli:300,400,500,700" rel="stylesheet">
+    <!-- BEGIN VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/vendors.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/charts/jquery-jvectormap-2.0.3.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/charts/morris.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/extensions/unslider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/weather-icons/climacons.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/tables/datatable/datatables.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/tables/extensions/responsive.dataTables.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/tables/extensions/buttons.dataTables.min.csss') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/vendors.css') }}">
+
+    <!-- END VENDOR CSS-->
+    <!-- BEGIN ROBUST CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/app.css') }}">
+    <!-- END ROBUST CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/core/menu/menu-types/vertical-menu.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/core/colors/palette-gradient.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/core/colors/palette-gradient.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/plugins/calendars/clndr.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/fonts/meteocons/style.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/core/menu/menu-types/horizontal-menu.css') }}">
+    <!-- END Page Level CSS-->
+    <!-- BEGIN Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/assets/css/style.css') }}">
+    <!-- END Custom CSS-->
+</head>
+<body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
+
+<!-- fixed-top-->
+<nav class="header-navbar navbar-expand-md navbar navbar-with-menu fixed-top navbar-semi-dark navbar-shadow">
+    <div class="navbar-wrapper">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
+                <li class="nav-item"><a class="navbar-brand" href="#"><img class="brand-logo" alt="robust admin logo" src="{{ asset('back/app-assets/images/logo.png') }}">                        <h4 class="brand-text">WEMANAGE Admin</h4></a></li>
+                <li class="nav-item d-md-none"><a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i class="fa fa-ellipsis-v"></i></a></li>
+            </ul>
+        </div>
+        <div class="navbar-container content">
+            <div class="collapse navbar-collapse" id="navbar-mobile">
+                <ul class="nav navbar-nav mr-auto float-left">
+                    <li class="nav-item d-none d-md-block"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu">         </i></a></li>
+
+
+                    <li class="nav-item nav-search"><a class="nav-link nav-link-search" href="#"><i class="ficon ft-search"></i></a>
+                        <div class="search-input">
+                            <input class="input" type="text" placeholder="Explore WEMANAGE...">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav float-right">
+                    <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-gb"></i><span>English</span><span class="selected-language"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-gb"></i> English</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> Chinese</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-de"></i> German</a></div>
+                    </li>
+                    <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-bell"></i><span class="badge badge-pill badge-default badge-danger badge-default badge-up">5</span></a>
+                        <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                            <li class="dropdown-menu-header">
+                                <h6 class="dropdown-header m-0"><span class="grey darken-2">Notifications</span></h6><span class="notification-tag badge badge-default badge-danger float-right m-0">5 New</span>
+                            </li>
+                            <li class="scrollable-container media-list w-100"><a href="javascript:void(0)">
+                                    <div class="media">
+                                        <div class="media-left align-self-center"><i class="ft-plus-square icon-bg-circle bg-cyan"></i></div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading">You have new order!</h6>
+                                            <p class="notification-text font-small-3 text-muted">Lorem ipsum dolor sit amet, consectetuer elit.</p><small>
+                                                <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">30 minutes ago</time></small>
+                                        </div>
+                                    </div></a><a href="javascript:void(0)">
+                                    <div class="media">
+                                        <div class="media-left align-self-center"><i class="ft-download-cloud icon-bg-circle bg-red bg-darken-1"></i></div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading red darken-1">99% Server load</h6>
+                                            <p class="notification-text font-small-3 text-muted">Aliquam tincidunt mauris eu risus.</p><small>
+                                                <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Five hour ago</time></small>
+                                        </div>
+                                    </div></a><a href="javascript:void(0)">
+                                    <div class="media">
+                                        <div class="media-left align-self-center"><i class="ft-alert-triangle icon-bg-circle bg-yellow bg-darken-3"></i></div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading yellow darken-3">Warning notifixation</h6>
+                                            <p class="notification-text font-small-3 text-muted">Vestibulum auctor dapibus neque.</p><small>
+                                                <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Today</time></small>
+                                        </div>
+                                    </div></a><a href="javascript:void(0)">
+                                    <div class="media">
+                                        <div class="media-left align-self-center"><i class="ft-check-circle icon-bg-circle bg-cyan"></i></div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading">Complete the task</h6><small>
+                                                <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Last week</time></small>
+                                        </div>
+                                    </div></a><a href="javascript:void(0)">
+                                    <div class="media">
+                                        <div class="media-left align-self-center"><i class="ft-file icon-bg-circle bg-teal"></i></div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading">Generate monthly report</h6><small>
+                                                <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Last month</time></small>
+                                        </div>
+                                    </div></a></li>
+                            <li class="dropdown-menu-footer"><a class="dropdown-item text-muted text-center" href="javascript:void(0)">Read all notifications</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-mail"></i><span class="badge badge-pill badge-default badge-info badge-default badge-up">5              </span></a>
+                        <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                            <li class="dropdown-menu-header">
+                                <h6 class="dropdown-header m-0"><span class="grey darken-2">Messages</span></h6><span class="notification-tag badge badge-default badge-warning float-right m-0">4 New</span>
+                            </li>
+                            <li class="scrollable-container media-list w-100"><a href="javascript:void(0)">
+                                    <div class="media">
+                                        <div class="media-left"><span class="avatar avatar-sm avatar-online rounded-circle"><img src="{{ asset('back/app-assets/images/portrait/small/avatar-s-19.png') }}" alt="avatar"><i></i></span></div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading">Margaret Govan</h6>
+                                            <p class="notification-text font-small-3 text-muted">I like your portfolio, let's start.</p><small>
+                                                <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Today</time></small>
+                                        </div>
+                                    </div></a><a href="javascript:void(0)">
+                                    <div class="media">
+                                        <div class="media-left"><span class="avatar avatar-sm avatar-busy rounded-circle"><img src="{{ asset('back/app-assets/images/portrait/small/avatar-s-2.png') }}" alt="avatar"><i></i></span></div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading">Bret Lezama</h6>
+                                            <p class="notification-text font-small-3 text-muted">I have seen your work, there is</p><small>
+                                                <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Tuesday</time></small>
+                                        </div>
+                                    </div></a><a href="javascript:void(0)">
+                                    <div class="media">
+                                        <div class="media-left"><span class="avatar avatar-sm avatar-online rounded-circle"><img src="{{ asset('back/app-assets/images/portrait/small/avatar-s-3.png') }}" alt="avatar"><i></i></span></div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading">Carie Berra</h6>
+                                            <p class="notification-text font-small-3 text-muted">Can we have call in this week ?</p><small>
+                                                <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Friday</time></small>
+                                        </div>
+                                    </div></a><a href="javascript:void(0)">
+                                    <div class="media">
+                                        <div class="media-left"><span class="avatar avatar-sm avatar-away rounded-circle"><img src="{{ asset('back/app-assets/images/portrait/small/avatar-s-6.png') }}" alt="avatar"><i></i></span></div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading">Eric Alsobrook</h6>
+                                            <p class="notification-text font-small-3 text-muted">We have project party this saturday.</p><small>
+                                                <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">last month</time></small>
+                                        </div>
+                                    </div></a></li>
+                            <li class="dropdown-menu-footer"><a class="dropdown-item text-muted text-center" href="javascript:void(0)">Read all messages</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                            <span class="avatar avatar-online">
+                                <img src="{{asset('uploads/images/'  ~ app.user.ImageUser) }}" alt="avatar"><i></i></span>
+                            <span class="user-name">{{ app.user.username }}</span></a>
+
+                            <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{ path('fos_user_profile_edit') }}"><i class="ft-user"></i> Edit Profile</a>
+                                <a class="dropdown-item" href="{{ path('fos_user_profile_show') }}"><i class="ft-user"></i> Profile</a>
+                                <a class="dropdown-item" href="email-application.html"><i class="ft-mail"></i> My Inbox</a>
+                                <a class="dropdown-item" href="user-cards.html"><i class="ft-check-square"></i> Task</a>
+                                <a class="dropdown-item" href="chat-application.html"><i class="ft-message-square"></i> Chats</a>
+                                <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ path('fos_user_security_logout') }}"><i class="ft-power"></i> Logout</a>
+                            </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+<!-- ////////////////////////////////////////////////////////////////////////////-->
+
+{% block sidebar %}
+    <div class="main-menu menu-fixed menu-dark menu-accordion    menu-shadow " data-scroll-to-active="true">
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+                <li class=" nav-item"><a href="index.html"><i class="icon-home"></i><span class="menu-title" data-i18n="nav.dash.main">Dashboard</span></a>
+
+                </li>
+                <li class=" nav-item"><a href="#"><i class="icon-user"></i><span class="menu-title" data-i18n="nav.users.main">Users</span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="user-profile.html" data-i18n="nav.users.user_profile">Users Profile</a>
+                        </li>
+                        <li><a class="menu-item" href="user-cards.html" data-i18n="nav.users.user_cards">Users Cards</a>
+                        </li>
+                        <li><a class="menu-item" href="{{ path('ajout') }}" data-i18n="nav.users.users_contacts">Users List</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a href="#"><i class="icon-briefcase"></i><span class="menu-title" data-i18n="nav.project.main">Project</span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="project-summary.html" data-i18n="nav.project.project_summary">Project Summary</a>
+                        </li>
+                        <li><a class="menu-item" href="project-tasks.html" data-i18n="nav.project.project_tasks">Project Task</a>
+                        </li>
+                        <li><a class="menu-item" href="project-bugs.html" data-i18n="nav.project.project_bugs">Project Bugs</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a href="#"><i class="icon-user"></i><span class="menu-title" data-i18n="nav.templates.main">Team</span></a>
+
+                </li>
+                <li class=" nav-item"><a href="#"><i class="icon-screen-tablet"></i><span class="menu-title" data-i18n="nav.templates.main">BacklogProduct</span></a>
+
+                </li>
+                <li class=" nav-item"><a href="#"><i class="icon-layers"></i><span class="menu-title" data-i18n="nav.page_layouts.main">BacklogSprint</span></a>
+
+                </li>
+                <li class=" nav-item"><a href="#"><i class="icon-list"></i><span class="menu-title" data-i18n="nav.navbars.main">Conge</span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="{{ path('affdemande') }}" data-i18n="nav.project.project_summary">Liste des Demandes</a>
+                        </li>
+                        <li><a class="menu-item" href="{{ path('afficherc') }}" data-i18n="nav.project.project_tasks">Les demandes traitées</a>
+                        </li>
+
+                    </ul>
+
+                </li>
+                <li class=" nav-item"><a href="{{ path('Afficherab') }}"><i class="icon-info"></i><span class="menu-title" data-i18n="nav.page_headers.main">Absence</span></a>
+
+                </li>
+                <li class=" nav-item"><a href="#"><i class="icon-notebook"></i><span class="menu-title" data-i18n="nav.vertical_nav.main">Documents</span></a>
+
+                </li>
+                <li class=" nav-item"><a href="#"><i class="icon-docs"></i><span class="menu-title" data-i18n="nav.horz_nav.main">Intervention</span></a>
+
+                </li>
+
+                <li class=" nav-item"><a href="#"><i class="icon-refresh spinner"></i><span class="menu-title" data-i18n="nav.footers.main">Services</span></a>
+
+                </li>
+
+                <li class=" nav-item"><a href="#"><i class="icon-pencil"></i><span class="menu-title" data-i18n="nav.color_palette.main">Formation</span></a>
+
+                </li>
+                <li class=" nav-item"><a href="#"><i class="icon-calendar"></i><span class="menu-title" data-i18n="nav.event_calendars.main">Event Calendars</span></a>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
+
+<div class="app-content content">
+    {% block content %}
+
+
+        <section id="row-selection">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+
+                        <div class="card-content collapse show">
+                            <div class="card-body">
+
+
+
+                                <br/>
+                                <br/>
+                                <div class="card-body card-dashboard">
+
+
+
+                                    <table  class="table table-striped table-bordered dataex-visibility-selector" class="table table-striped table-bordered dataex-html5-message">
+                                        <thead>
+                                        <tr>
+
+                                            <th>Nom</th>
+                                            <th>Date</th>
+                                            <th>Heure</th>
+                                            <th>Nombre d'absence</th>
+                                            <th>Action</th>
+
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            {%  for i in absences  %}
+
+                                            <td>{{ i.ideUser.Nom }}</td>
+                                            <td>{{ i.date | date("m/d/y")}}</td>
+                                            <td>{{ i.heure }}</td>
+                                            <td>{{ i.nbre}}</td>
+
+                                            <td> <section id="button-shadow">
+
+
+
+
+                                                    <a class="btn btn-warning btn-min-width box-shadow-4 mr-1 mb-1"   href="{{ path('update1',{'id':i.idAbsence}) }}" >Edit</a>
+                                                    <a class="btn btn-danger btn-min-width box-shadow-5 mr-1 mb-1"   href="{{ path('delete1',{'id':i.idAbsence}) }}" >Delete</a>
+
+                                                </section> </td>
+
+
+
+
+
+
+
+                                        </tr>
+                                        {% endfor %}
+
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    {% endblock %}
+</div>
+
+
+
+
+<!-- ////////////////////////////////////////////////////////////////////////////-->
+{% block footer %}
+
+<footer class="footer footer-static footer-light navbar-border">
+    <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span class="float-md-left d-block d-md-inline-block">Copyright  &copy; 2020 <a class="text-bold-800 grey darken-2" href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" target="_blank">WEMANAGE </a>, All rights reserved. </span><span class="float-md-right d-block d-md-inline-blockd-none d-lg-block">Hand-crafted & Made with <i class="ft-heart pink"></i></span></p>
+</footer>
+
+<!-- BEGIN VENDOR JS-->
+<script src="{{ asset('back/app-assets/vendors/js/vendors.min.js') }}"></script>
+<!-- BEGIN VENDOR JS-->
+<!-- BEGIN PAGE VENDOR JS-->
+
+<script src="{{ asset('back/app-assets/vendors/js/ui/jquery.sticky.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/datatable/datatables.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/datatable/buttons.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/jszip.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/pdfmake.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/vfs_fonts.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/buttons.print.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/buttons.colVis.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/datatable/datatables.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/datatable/buttons.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/buttons.colVis.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/buttons.print.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/datatable/dataTables.select.min.js') }}"></script>
+
+
+
+<!-- END PAGE VENDOR JS-->
+<!-- BEGIN ROBUST JS-->
+<script src="{{ asset('back/app-assets/js/core/app-menu.js') }}"></script>
+<script src="{{ asset('back/app-assets/js/core/app.js') }}"></script>
+<!-- END ROBUST JS-->
+<!-- BEGIN PAGE LEVEL JS-->
+<script src="{{ asset('back/app-assets/js/scripts/pages/dashboard-ecommerce.js') }}"></script>
+<script src="{{ asset('back/app-assets/js/scripts/tables/datatables/datatable-api.js') }}"></script>
+<script src="{{ asset('back/app-assets/js/scripts/tables/datatables-extensions/datatable-button/datatable-html5.js') }}"></script>
+<script src="{{ asset('back/app-assets/js/scripts/tables/datatables-extensions/datatable-button/datatable-print.js') }}"></script>
+
+<!-- END PAGE LEVEL JS-->
+</body>
+</html>
+{% endblock %}

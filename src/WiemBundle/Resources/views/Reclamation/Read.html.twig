@@ -1,0 +1,40 @@
+{% extends 'back.html.twig'%}
+{% block content %}
+    <br></<br>
+
+    <ul class="nav navbar-nav float-right">
+        <li class="nav-item"><a class="btn btn-success btn-doc-header"   href="{{ path('createR') }}"   target="_blank"><i class="fa fa-life-ring"></i>Ajouter</a></li>
+    </ul>
+    <section id="cardAnimation" class="cardAnimation">
+        <div class="row">
+            <div class="col-12 mb-3">
+                <h4>Reclamation</h4>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            {%  for i in f %}
+                <div class="col-md-4 col-sm-12">
+                    <div class="card box-shadow-0 animated fadeInLeft" data-appear="appear" data-animation="fadeInLeft">
+                        <div class="card-header white bg-blue-grey">
+                            <h4 class="card-title white">{{ i.getSujetReclamation}}</h4>
+
+                        </div>
+                        <p>Etat : {{ i.etat }}</p>
+                        <p>Description: {{ i.descriptionReclamation }}</p>
+                        <div class="card-content collapse show">
+                            <div class="card-body border-bottom-blue-grey">
+                                <a class="btn btn-info btn-min-width box-shadow-3 mr-1 mb-1" href="{{ path('deleteR',{'id':i.idReclamation}) }}">Supprimer</a>
+                                <a class="btn btn-info btn-min-width box-shadow-3 mr-1 mb-1" href="{{ path('updateR',{'id':i.idReclamation}) }}">Modifier</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+
+{% extends 'front.html.twig'%}
+
+        {% block content %}
+
+            <style>
+                .bb{margin-left: 250px}
+
+
+            </style>
+
+
+
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <div class="card-body">
+                                <div id="oldColumnChart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <div class="card-body">
+                                <div id="newColumnChart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+                                    <div class="bb">
+
+                                        <div id="div_chart"></div>
+                                    </div>
+
+
+
+            <script type="text/javascript">
+
+                    {{ gc_draw(piechart, 'div_chart') }}
+
+
+                    {{ gc_draw([oldColumnChart], ['oldColumnChart']) }}
+
+                    {{ gc_draw([ newColumnChart], [ 'newColumnChart']) }}
+
+
+                </script>
+
+            </section>
+            </div>
+            </div>
+        {% endblock %}
